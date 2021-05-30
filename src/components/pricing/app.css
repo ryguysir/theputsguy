@@ -1,0 +1,26 @@
+.pricing-block {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(22, 41, 54);
+  color: rgb(200, 209, 224);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing-container {
+  width: 75%;
+  height: 75%;
+}
+.horizontal-line {
+  width: 100%;
+  height: 2px;
+  background: rgb(82, 85, 92);
+}
+
+.pricing-tier-container {
+  width: 100%;
+  height: 200px;
+  background: red;
+}

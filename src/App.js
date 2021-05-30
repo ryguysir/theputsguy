@@ -1,12 +1,10 @@
 import "./App.css";
-import Header from "./components/header/Header";
-import HeaderImage from "./components/headerImage/HeaderImage";
+import AboutUs from "./components/aboutUs/AboutUs";
 
 function App() {
   return (
     <div>
-      <Header />
-      <HeaderImage />
+      <AboutUs />
     </div>
   );
 }

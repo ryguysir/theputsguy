@@ -8,7 +8,7 @@
 }
 .header-image {
   position: fixed;
-  width: 100%;
+  height: 100vmax;
   object-fit: cover;
   z-index: -1;
 }
@@ -31,16 +31,59 @@
 }
 .basics-textbox {
   display: grid;
+  height: inherit;
   grid-template-rows: 1fr 3fr;
-  align-items: start;
-  border-top: 2px solid grey;
+  border-top: 1px solid rgb(172, 172, 172);
   margin: 20px;
   padding: 20px;
 }
 .basics-textbox h1 {
+  text-align: center;
   font-weight: 600;
 }
 .basics-textbox h3 {
   font-weight: 300;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1330px) {
+  .basics-textbox-container {
+    position: relative;
+    width: 80vw;
+    height: 40vh;
+    padding: 2%;
+
+    background: white;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+
+    display: grid;
+    gap: 1%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .basics-textbox {
+    display: grid;
+    height: 90%;
+    border-top: 1px solid rgb(172, 172, 172);
+    margin-top: 10px;
+    padding: 0px;
+
+    grid-template-rows: 0.75fr 3fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .basics-textbox h1 {
+    text-align: center;
+    font-size: 100%;
+    font-weight: 600;
+  }
+  .basics-textbox h3 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 75%;
+  }
 }

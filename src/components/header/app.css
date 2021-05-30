@@ -5,14 +5,16 @@
   background: #fff;
 
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 1fr;
   font-family: "Montserrat", sans-serif;
   padding-top: 5px;
   padding-bottom: 5px;
+  z-index: 2;
 }
 .main-logo {
-  height: inherit;
+  height: 5vh;
   position: relative;
   margin-left: 5%;
 }
@@ -36,7 +38,18 @@
   align-items: center;
   cursor: pointer;
   font-weight: 500;
+  font-size: 100%;
+  margin-top: 10px;
 }
 .header-bttn:hover {
   border-bottom: 3px grey solid;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    grid-template-columns: 1fr 5fr 6fr;
+  }
+  .header-bttn {
+    font-size: 75%;
+  }
 }
