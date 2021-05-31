@@ -12,6 +12,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   z-index: 2;
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.219));
 }
 .main-logo {
   height: 5vh;
@@ -28,6 +29,7 @@
   gap: 1%;
   grid-column: 3;
   grid-row: 1;
+  margin-bottom: 2%;
 }
 .header-bttn {
   height: calc(100% - 7px);
@@ -43,6 +45,10 @@
 }
 .header-bttn:hover {
   border-bottom: 3px grey solid;
+}
+
+.header-bttn-toggled {
+  border-bottom: 3px rgb(160, 72, 80) solid;
 }
 
 @media screen and (max-width: 1000px) {

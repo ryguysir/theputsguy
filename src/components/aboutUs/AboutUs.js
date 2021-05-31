@@ -9,7 +9,7 @@ import Pricing from "../pricing/Pricing";
 const AboutUs = () => {
   return (
     <div>
-      <Header />
+      <Header selected={"about"} />
       <HeaderImage />
       <Pricing />
       <Legal />

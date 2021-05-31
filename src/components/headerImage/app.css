@@ -11,6 +11,7 @@
   height: 100vmax;
   object-fit: cover;
   z-index: -1;
+  opacity: 0.5;
 }
 .basics-textbox-container {
   position: relative;
@@ -27,7 +28,27 @@
   display: grid;
   gap: 3%;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 5fr;
   justify-content: center;
+}
+.basics-textbox-verticle-lines {
+  position: absolute;
+  width: 33%;
+  height: 60%;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+
+  border-right: 1px solid rgb(172, 172, 172);
+  border-left: 1px solid rgb(172, 172, 172);
+}
+.basics-textbox-header {
+  text-align: center;
+  width: 100%;
+  grid-column: 1/4;
+  grid-row: 1;
+  font-size: 120%;
+  font-weight: 600;
 }
 .basics-textbox {
   display: grid;
@@ -36,6 +57,7 @@
   border-top: 1px solid rgb(172, 172, 172);
   margin: 20px;
   padding: 20px;
+  grid-row: 2;
 }
 .basics-textbox h1 {
   text-align: center;
@@ -48,21 +70,12 @@
 
 @media screen and (max-width: 1330px) {
   .basics-textbox-container {
-    position: relative;
     width: 80vw;
     height: 40vh;
-    padding: 2%;
-
-    background: white;
-
-    border-radius: 5px;
-
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
-
-    display: grid;
-    gap: 1%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+  }
+  .basics-textbox-header {
+    font-size: 80%;
+    height: 50%;
   }
   .basics-textbox {
     display: grid;

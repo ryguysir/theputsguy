@@ -1,7 +1,9 @@
 .pricing-block {
   position: relative;
-  width: 100vw;
+  margin: 0 auto;
+  width: 80vw;
   height: 100vh;
+  border-radius: 5px;
   background: rgb(22, 41, 54);
   color: rgb(200, 209, 224);
 
@@ -20,7 +22,36 @@
 }
 
 .pricing-tier-container {
-  width: 100%;
+  border-bottom: 2px solid rgb(82, 85, 92);
+  width: 80%;
   height: 200px;
-  background: red;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.pricing-tier-container h1 {
+  font-weight: 600;
+}
+.pricing-tier-container h3 {
+  font-weight: 300;
+}
+
+.paypal-temp {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 240px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paypal-temp img {
+  width: 100%;
+  object-fit: cover;
 }

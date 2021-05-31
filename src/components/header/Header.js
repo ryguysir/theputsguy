@@ -1,7 +1,7 @@
 import React from "react";
 import "./app.css";
 
-const Header = () => {
+const Header = ({ selected }) => {
   return (
     <div className="header">
       <object
@@ -12,10 +12,16 @@ const Header = () => {
       ></object>
 
       <div className="header-bttn-holder">
-        <div className="header-bttn">About Us</div>
-        <div className="header-bttn">Blog</div>
-        <div className="header-bttn">FAQ</div>
-        <div className="header-bttn">Contact Us</div>
+        <div className={`header-bttn ${selected === "about" ? "header-bttn-toggled" : ""}`}>
+          About Us
+        </div>
+        <div className={`header-bttn ${selected === "blog" ? "header-bttn-toggled" : ""}`}>
+          Blog
+        </div>
+        <div className={`header-bttn ${selected === "faq" ? "header-bttn-toggled" : ""}`}>FAQ</div>
+        <div className={`header-bttn ${selected === "contact" ? "header-bttn-toggled" : ""}`}>
+          Contact Us
+        </div>
       </div>
     </div>
   );

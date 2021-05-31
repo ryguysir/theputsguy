@@ -2,14 +2,27 @@ import React from "react";
 import "./app.css";
 
 const HeaderImage = () => {
+  const scrollListen = () => {
+    let curPercent = window.scrollY / window.innerHeight;
+    document.getElementsByClassName("basics-textbox-container")[0].style.opacity = 1 - curPercent;
+    document.getElementsByClassName("basics-textbox-container")[0].style.top =
+      window.scrollY * 0.5 + "px";
+  };
+  window.addEventListener("scroll", scrollListen);
+
   return (
     <div className="header-image-container">
       <img
         className="header-image"
-        alt="header image"
-        src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        alt="header"
+        src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       />
       <div className="basics-textbox-container">
+        <div className="basics-textbox-verticle-lines"></div>
+        <div className="basics-textbox-header">
+          EARLY ACCESS ONLY! FULL ROLLOUT EXPECTED BY APRIL 2021
+        </div>
+
         <div className="basics-textbox">
           <h1>The Basics</h1>
           <h3>
