@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./app.css";
 
-const Header = ({ selected }) => {
+const Header = ({ selectedLink }) => {
   return (
     <div className="header">
       <object
@@ -12,16 +13,21 @@ const Header = ({ selected }) => {
       ></object>
 
       <div className="header-bttn-holder">
-        <div className={`header-bttn ${selected === "about" ? "header-bttn-toggled" : ""}`}>
-          About Us
-        </div>
-        <div className={`header-bttn ${selected === "blog" ? "header-bttn-toggled" : ""}`}>
-          Blog
-        </div>
-        <div className={`header-bttn ${selected === "faq" ? "header-bttn-toggled" : ""}`}>FAQ</div>
-        <div className={`header-bttn ${selected === "contact" ? "header-bttn-toggled" : ""}`}>
-          Contact Us
-        </div>
+        <Link to="/" className={`header-bttn ${selectedLink === 0 ? "header-bttn-toggled" : ""}`}>
+          <div>About Us</div>
+        </Link>
+        <Link
+          to="/blog"
+          className={`header-bttn ${selectedLink === 1 ? "header-bttn-toggled" : ""}`}
+        >
+          <div>Blog</div>
+        </Link>
+        <Link
+          to="/faq"
+          className={`header-bttn ${selectedLink === 2 ? "header-bttn-toggled" : ""}`}
+        >
+          <div>FAQ</div>
+        </Link>
       </div>
     </div>
   );

@@ -2,14 +2,6 @@ import React from "react";
 import "./app.css";
 
 const HeaderImage = () => {
-  const scrollListen = () => {
-    let curPercent = window.scrollY / window.innerHeight;
-    document.getElementsByClassName("basics-textbox-container")[0].style.opacity = 1 - curPercent;
-    document.getElementsByClassName("basics-textbox-container")[0].style.top =
-      window.scrollY * 0.5 + "px";
-  };
-  window.addEventListener("scroll", scrollListen);
-
   return (
     <div className="header-image-container">
       <img

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./app.css";
 
-import Header from "../header/Header";
 import HeaderImage from "../headerImage/HeaderImage";
 import Legal from "../legal/Legal";
 import Pricing from "../pricing/Pricing";
 
-const AboutUs = () => {
+const AboutUs = ({ setSelectedLink }) => {
+  useEffect(() => {
+    setSelectedLink(0);
+  });
   return (
     <div>
-      <Header selected={"about"} />
       <HeaderImage />
       <Pricing />
       <Legal />

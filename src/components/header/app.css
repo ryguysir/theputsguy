@@ -42,7 +42,10 @@
   font-weight: 500;
   font-size: 100%;
   margin-top: 10px;
+  text-decoration: none;
+  color: black;
 }
+
 .header-bttn:hover {
   border-bottom: 3px grey solid;
 }
