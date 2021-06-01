@@ -9,11 +9,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   const [selectedLink, setSelectedLink] = useState(0);
   const scrollHandler = () => {
-    let curPercent = window.scrollY / window.innerHeight;
-    let elem = document.getElementsByClassName("basics-textbox-container")[0];
-    if (elem === undefined) {
+    if (document.getElementsByClassName("basics-textbox-container")[0] === undefined) {
       return;
     }
+    let curPercent = window.scrollY / window.innerHeight;
+    let elem = document.getElementsByClassName("basics-textbox-container")[0];
+
     elem.style.transform = "translateY(" + window.scrollY * 0.5 + "px)";
   };
   window.addEventListener("scroll", function () {
