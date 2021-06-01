@@ -21,7 +21,9 @@
   height: 50vh;
   padding: 2%;
 
-  background: white;
+  background: linear-gradient(0deg, rgba(37, 57, 70, 1) 0%, rgba(50, 74, 89, 1) 100%);
+
+  color: white;
 
   border-radius: 5px;
 
@@ -32,17 +34,6 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 5fr;
   justify-content: center;
-}
-.basics-textbox-verticle-lines {
-  position: absolute;
-  width: 33%;
-  height: 60%;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-
-  border-right: 1px solid rgb(172, 172, 172);
-  border-left: 1px solid rgb(172, 172, 172);
 }
 .basics-textbox-header {
   text-align: center;
@@ -78,7 +69,6 @@
     opacity: 0.5;
   }
 }
-
 @media screen and (max-width: 1330px) {
   .basics-textbox-container {
     width: 80vw;
@@ -108,6 +98,31 @@
   .basics-textbox h3 {
     font-weight: 300;
     letter-spacing: 1px;
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .basics-textbox-header {
+    font-size: 60%;
+    font-weight: 700;
+    grid-row: 1;
+    margin-bottom: 5%;
+  }
+  .basics-textbox-container {
+    width: 90vw;
+    height: fit-content;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+  .basics-textbox-verticle-lines {
+    display: none;
+  }
+
+  .basics-textbox h1 {
+    font-size: 75%;
+  }
+  .basics-textbox h3 {
     font-size: 75%;
   }
 }

@@ -10,7 +10,6 @@ const HeaderImage = () => {
         src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       />
       <div className="basics-textbox-container">
-        <div className="basics-textbox-verticle-lines"></div>
         <div className="basics-textbox-header">
           EARLY ACCESS ONLY! FULL ROLLOUT EXPECTED BY APRIL 2021
         </div>

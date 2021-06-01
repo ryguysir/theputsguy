@@ -40,3 +40,15 @@
     font-size: 75%;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .legal-container {
+    height: 25vh;
+  }
+  .legal-container h1 {
+    font-size: 80%;
+  }
+  .legal-container h3 {
+    font-size: 35%;
+  }
+}

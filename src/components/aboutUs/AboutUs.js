@@ -7,6 +7,7 @@ import Pricing from "../pricing/Pricing";
 
 const AboutUs = ({ setSelectedLink }) => {
   useEffect(() => {
+    window.scroll(0, 0);
     setSelectedLink(0);
   });
   return (

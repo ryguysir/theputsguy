@@ -14,7 +14,6 @@ function App() {
     if (elem === undefined) {
       return;
     }
-    elem.style.opacity = 1 - curPercent;
     elem.style.transform = "translateY(" + window.scrollY * 0.5 + "px)";
   };
   window.addEventListener("scroll", function () {

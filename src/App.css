@@ -1,5 +1,6 @@
 body {
   background: rgb(22, 41, 54);
+  scroll-behavior: smooth;
 }
 .App {
   text-align: center;

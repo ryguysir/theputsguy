@@ -5,6 +5,7 @@ import Legal from "../legal/Legal";
 
 const FAQ = ({ setSelectedLink }) => {
   useEffect(() => {
+    window.scroll(0, 0);
     setSelectedLink(2);
   });
   const faqData = [
@@ -41,6 +42,7 @@ const FAQ = ({ setSelectedLink }) => {
     <>
       <div className="faq-page-container">
         <img
+          loading="lazy"
           alt="faq"
           src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         />

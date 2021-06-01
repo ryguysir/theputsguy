@@ -3,6 +3,7 @@ import "./app.css";
 
 const Blog = ({ setSelectedLink }) => {
   useEffect(() => {
+    window.scroll(0, 0);
     setSelectedLink(1);
   });
   return (

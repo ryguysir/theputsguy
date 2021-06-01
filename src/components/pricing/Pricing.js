@@ -2,6 +2,7 @@ import React from "react";
 import "./app.css";
 
 import PricingTier from "./PricingTier";
+import Social from "./Social";
 
 const Pricing = () => {
   return (
@@ -28,6 +29,7 @@ const Pricing = () => {
           />
         </div>
       </div>
+      <Social />
     </div>
   );
 };
