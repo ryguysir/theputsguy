@@ -10,14 +10,17 @@ function App() {
   const [selectedLink, setSelectedLink] = useState(0);
   const scrollHandler = () => {
     let curPercent = window.scrollY / window.innerHeight;
-    let elem = document.getElementsByClassName("basics-textbox-container")[0].style;
-
-    elem.opacity = 1 - curPercent;
-    elem.transform = "translateY(" + window.scrollY * 0.5 + "px)";
+    let elem = document.getElementsByClassName("basics-textbox-container")[0];
+    if (elem === undefined) {
+      return;
+    }
+    elem.style.opacity = 1 - curPercent;
+    elem.style.transform = "translateY(" + window.scrollY * 0.5 + "px)";
   };
   window.addEventListener("scroll", function () {
     window.requestAnimationFrame(scrollHandler);
   });
+
   return (
     <div>
       <Router>
@@ -26,7 +29,9 @@ function App() {
           <Route
             path="/"
             exact
-            render={(props) => <AboutUs {...props} setSelectedLink={setSelectedLink} />}
+            render={(props) => (
+              <AboutUs {...props} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
+            )}
           />
 
           <Route

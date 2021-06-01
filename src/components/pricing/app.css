@@ -24,13 +24,14 @@
 .pricing-tier-container {
   border-bottom: 2px solid rgb(82, 85, 92);
   width: 80%;
-  height: 200px;
+
   position: relative;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   margin-top: 2%;
   margin-bottom: 2%;
+  padding-bottom: 2%;
 }
 .pricing-tier-container h1 {
   font-weight: 600;
@@ -43,8 +44,8 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
-  height: 240px;
+  width: 40%;
+  padding: 7%;
   background: white;
   display: flex;
   justify-content: center;
@@ -52,6 +53,5 @@
 }
 
 .paypal-temp img {
-  width: 100%;
   object-fit: cover;
 }
