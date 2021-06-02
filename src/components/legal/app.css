@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 750px) {
   .legal-container {
-    height: 25vh;
+    height: 20vh;
   }
   .legal-container h1 {
     font-size: 80%;

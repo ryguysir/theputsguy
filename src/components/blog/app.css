@@ -1,10 +1,69 @@
-.blog-container {
+.blog-page {
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 300%;
-  text-align: center;
-  color: white;
+}
+.blog-container {
+  width: 95%;
+  display: grid;
+  gap: 5%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+
+  padding-top: 15vh;
+  padding-bottom: 25vh;
+}
+.blog-entry {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  background: #fff;
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.219));
+
+  display: grid;
+  justify-items: center;
+
+  overflow: hidden;
+}
+.blog-entry::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 40%);
+
+  z-index: 10;
+}
+.blog-entry i {
+  position: absolute;
+  bottom: 5%;
+  z-index: 20;
+  color: rgb(0, 0, 0);
+}
+.blog-entry img {
+  width: 100%;
+}
+.blog-entry span {
+  width: 80%;
+}
+.blog-entry h1 {
+  font-weight: 700;
+  font-size: 120%;
+}
+.blog-entry h2 {
+  font-weight: 500;
+  font-size: 75%;
+}
+.blog-entry h3 {
+  font-weight: 300;
+  font-size: 50%;
+}
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.185);
 }
