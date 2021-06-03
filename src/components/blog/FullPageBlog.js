@@ -1,16 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Legal from "../legal/Legal";
 
 const FullPageBlog = ({ match }) => {
   const blogData = require("./blogData.js");
-  let thisBlogData = blogData.default.filter((entry) => {
-    return entry.id === match.params.id;
+  let curBlogData = blogData.default.filter((item) => {
+    return item.id === match.params.id;
   });
-  console.log(thisBlogData);
-  useEffect(() => {});
   return (
-    <div>
-      <div className="full-page-blog-container">{thisBlogData[0].title}</div>
-    </div>
+    <>
+      <div className="full-blog-page">
+        <div className="full-page-blog-container">
+          <h1>{curBlogData[0].title}</h1>
+          <h2>{curBlogData[0].date}</h2>
+          <div className="full-page-blog-container-image">
+            <img alt="" src={curBlogData[0].image} />
+          </div>
+          <h3>{curBlogData[0].body}</h3>
+        </div>
+      </div>
+      <Legal />
+    </>
   );
 };
 

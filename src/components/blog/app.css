@@ -1,7 +1,7 @@
 .blog-page {
   position: relative;
   width: 100vw;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -15,7 +15,7 @@
   display: grid;
   gap: 5%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
   justify-items: center;
 
   padding-top: 15vh;
@@ -23,10 +23,11 @@
 }
 .blog-entry {
   position: relative;
-  height: 300px;
+  height: 150px;
   width: 300px;
   border-radius: 5px;
-  background: #fff;
+  background: rgb(40, 54, 66);
+  color: rgb(231, 231, 231);
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.219));
 
   display: grid;
@@ -34,20 +35,12 @@
 
   overflow: hidden;
 }
-.blog-entry::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 40%);
 
-  z-index: 10;
-}
 .blog-entry i {
   position: absolute;
   bottom: 5%;
   z-index: 20;
-  color: rgb(0, 0, 0);
+  color: rgb(231, 231, 231);
 }
 .blog-entry img {
   width: 100%;
@@ -70,14 +63,49 @@
 .horizontal-line {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.185);
+  background: rgba(231, 231, 231, 0.25);
 }
 
-.full-page-blog-container {
+.full-blog-page {
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 15vh;
+  display: grid;
+  justify-items: center;
+}
+.full-page-blog-container {
+  width: 75%;
+  height: 0%;
+  position: relative;
+  border-radius: 5px;
+  display: table;
+  color: rgb(231, 231, 231);
+  background: rgb(40, 54, 66);
+  padding: 4%;
+}
+.full-page-blog-container-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  overflow: hidden;
+}
+.full-page-blog-container-image img {
+  min-width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+.full-page-blog-container h1 {
+  font-size: 150%;
+  font-weight: 600;
+}
+.full-page-blog-container h2 {
+  font-size: 100%;
+  font-weight: 500;
+}
+.full-page-blog-container h3 {
+  font-size: 100%;
+  font-weight: 300;
 }

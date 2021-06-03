@@ -12,10 +12,6 @@ const HeaderImage = () => {
       />
       <Parallax y={[-50, 50]}>
         <div className="basics-textbox-container">
-          <div className="basics-textbox-header">
-            EARLY ACCESS ONLY! FULL ROLLOUT EXPECTED BY APRIL 2021
-          </div>
-
           <div className="basics-textbox">
             <h1>The Basics</h1>
             <h3>

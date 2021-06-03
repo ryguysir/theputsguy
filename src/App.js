@@ -24,10 +24,9 @@ function App() {
                 <AboutUs {...props} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
               )}
             />
-
+            <Route path="/blog/:id" exact component={FullPageBlog} />
             <Route
               path="/blog"
-              exact
               render={(props) => <Blog {...props} setSelectedLink={setSelectedLink} />}
             />
             <Route
@@ -35,7 +34,6 @@ function App() {
               exact
               render={(props) => <FAQ {...props} setSelectedLink={setSelectedLink} />}
             />
-            <Route path="/blog/:id" component={FullPageBlog} />
           </Switch>
         </Router>
       </ParallaxProvider>
