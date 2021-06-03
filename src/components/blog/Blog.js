@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import "./app.css";
 import BlogEntry from "./BlogEntry";
 import Legal from "../legal/Legal";
@@ -17,7 +18,8 @@ const Blog = ({ setSelectedLink }) => {
           {blogData.default.map((entry) => {
             return (
               <BlogEntry
-                key={Math.random() * 100}
+                key={entry.id}
+                id={entry.id}
                 title={entry.title}
                 date={entry.date}
                 body={entry.body}

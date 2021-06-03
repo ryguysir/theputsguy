@@ -15,37 +15,29 @@
   opacity: 0.5;
 }
 .basics-textbox-container {
-  transition: all 0.05s ease-in-out;
-  position: relative;
   width: 70vw;
   height: 50vh;
-  padding: 2%;
-
-  background: linear-gradient(0deg, rgba(37, 57, 70, 1) 0%, rgba(50, 74, 89, 1) 100%);
-
-  color: white;
-
+  padding: 2vw;
   border-radius: 5px;
 
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(0deg, rgba(37, 57, 70, 1) 0%, rgba(50, 74, 89, 1) 100%);
+  color: #fff;
 
   display: grid;
-  gap: 3%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 5fr;
-  justify-content: center;
+  gap: 2vw;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
 }
 .basics-textbox-header {
   text-align: center;
   width: 100%;
   grid-column: 1/4;
-  grid-row: 1;
   font-size: 120%;
   font-weight: 600;
 }
 .basics-textbox {
+  width: 200px;
   display: grid;
-  height: inherit;
   grid-template-rows: 1fr 3fr;
   border-top: 1px solid rgb(172, 172, 172);
   margin: 20px;

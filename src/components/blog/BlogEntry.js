@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BlogEntry = ({ title, date, body }) => {
+const BlogEntry = ({ id, title, date, body }) => {
   return (
     <div className="blog-entry">
       <span>
@@ -9,7 +10,9 @@ const BlogEntry = ({ title, date, body }) => {
         <h2>{date}</h2>
         <h3>{body}</h3>
       </span>
-      <i className="fas fa-chevron-down"></i>
+      <Link to={`/blog/${id}`}>
+        <i className="fas fa-chevron-down"></i>
+      </Link>
     </div>
   );
 };
