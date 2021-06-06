@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Disqus from "disqus-react";
 import { Link } from "react-router-dom";
 import Legal from "../legal/Legal";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
@@ -12,8 +13,14 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
     date: "",
     body: "",
   });
+  const disqusShortname = "theputsguy";
+  const disqusConfig = {
+    url: window.location.origin,
+    identifier: items[0]?.id,
+    title: items[0]?.title,
+  };
   const fetchItems = async () => {
-    const data = await fetch("https://api.jsonbin.io/v3/b/60bc11a492164b68bec13b15", {
+    const data = await fetch("https://api.jsonbin.io/v3/b/60bd26959fc30168f1c5813e", {
       method: "GET",
       headers: {
         "X-Master-Key": "$2b$10$TBFDFW8pqBYx5Hjx2VOiBuSJ/mt99xnn.L6OR3X7TJ2S7WcxvXCZO",
@@ -41,7 +48,16 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
           <div className="full-page-blog-container-image">
             <img alt="" src={items[0]?.image} />
           </div>
-          <h3>{items[0]?.body}</h3>
+          <h3>
+            {items[0]?.body.split("/n").map((section) => {
+              return (
+                <div>
+                  {section}
+                  <br />
+                </div>
+              );
+            })}
+          </h3>
           <div className="full-blog-social-share-container">
             <FacebookShareButton
               url="www.google.com"
@@ -50,7 +66,7 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
             >
               <FacebookIcon round={true}></FacebookIcon>
             </FacebookShareButton>
-
+            Share this post
             <TwitterShareButton
               url="www.google.com"
               quote={"Check out this great blog post from the puts guy!"}
@@ -59,6 +75,9 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
               <TwitterIcon round={true}></TwitterIcon>
             </TwitterShareButton>
           </div>
+          <br />
+          <br />
+          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </div>
       </div>
       <Legal />

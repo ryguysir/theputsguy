@@ -7,7 +7,7 @@ import BlogEntry from "./BlogEntry";
 const Blog = ({ setSelectedLink }) => {
   const [items, setItems] = useState({ record: { root: [] } });
   const fetchItems = async () => {
-    const data = await fetch("https://api.jsonbin.io/v3/b/60bc11a492164b68bec13b15", {
+    const data = await fetch("https://api.jsonbin.io/v3/b/60bd26959fc30168f1c5813e", {
       method: "GET",
       headers: {
         "X-Master-Key": "$2b$10$TBFDFW8pqBYx5Hjx2VOiBuSJ/mt99xnn.L6OR3X7TJ2S7WcxvXCZO",
@@ -39,6 +39,7 @@ const Blog = ({ setSelectedLink }) => {
           })}
         </div>
       </div>
+
       <Legal />
     </>
   );
