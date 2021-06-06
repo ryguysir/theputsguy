@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Legal from "../legal/Legal";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookIcon, TwitterIcon } from "react-share";
 
 const FullPageBlog = ({ setSelectedLink, match }) => {
   const [items, setItems] = useState({
@@ -41,8 +42,23 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
             <img alt="" src={items[0]?.image} />
           </div>
           <h3>{items[0]?.body}</h3>
-          <FacebookShareButton children={match.url} />
-          <TwitterShareButton children={match.url} />
+          <div className="full-blog-social-share-container">
+            <FacebookShareButton
+              url="www.google.com"
+              quote={"Check out this great blog post from the puts guy!"}
+              hashtag="#theputsguy"
+            >
+              <FacebookIcon round={true}></FacebookIcon>
+            </FacebookShareButton>
+
+            <TwitterShareButton
+              url="www.google.com"
+              quote={"Check out this great blog post from the puts guy!"}
+              hashtag="#theputsguy"
+            >
+              <TwitterIcon round={true}></TwitterIcon>
+            </TwitterShareButton>
+          </div>
         </div>
       </div>
       <Legal />
