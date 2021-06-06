@@ -24,15 +24,30 @@ function App() {
                 <AboutUs {...props} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
               )}
             />
-            <Route path="/blog/:id" exact component={FullPageBlog} />
+
             <Route
               path="/blog"
-              render={(props) => <Blog {...props} setSelectedLink={setSelectedLink} />}
+              exact
+              render={(props) => (
+                <Blog {...props} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
+              )}
+            />
+            <Route
+              path="/blog/:id"
+              render={(props) => (
+                <FullPageBlog
+                  {...props}
+                  selectedLink={selectedLink}
+                  setSelectedLink={setSelectedLink}
+                />
+              )}
             />
             <Route
               path="/faq"
               exact
-              render={(props) => <FAQ {...props} setSelectedLink={setSelectedLink} />}
+              render={(props) => (
+                <FAQ {...props} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
+              )}
             />
           </Switch>
         </Router>

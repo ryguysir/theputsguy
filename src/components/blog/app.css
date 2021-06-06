@@ -22,6 +22,7 @@
   padding-bottom: 25vh;
 }
 .blog-entry {
+  animation: blogEntryLoadAnim 0.5s ease-in-out;
   position: relative;
   height: 150px;
   width: 300px;
@@ -67,6 +68,7 @@
 }
 
 .full-blog-page {
+  transition: all 0.5s ease-in-out;
   position: relative;
   width: 100vw;
   min-height: 100vh;
@@ -75,6 +77,7 @@
   justify-items: center;
 }
 .full-page-blog-container {
+  animation: blogEntryLoadAnim 0.5s ease-in-out;
   width: 75%;
   height: 0%;
   position: relative;
@@ -85,6 +88,8 @@
   padding: 4%;
 }
 .full-page-blog-container-image {
+  animation: blogEntryLoadAnim 0.5s ease-in-out;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,4 +113,13 @@
 .full-page-blog-container h3 {
   font-size: 100%;
   font-weight: 300;
+}
+
+@keyframes blogEntryLoadAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

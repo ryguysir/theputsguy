@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Legal from "../legal/Legal";
 
-const FullPageBlog = ({ match }) => {
-  const blogData = require("./blogData.js");
-  let curBlogData = blogData.default.filter((item) => {
-    return item.id === match.params.id;
+const FullPageBlog = ({ setSelectedLink, match }) => {
+  const [items, setItems] = useState({
+    image: "",
+    id: "",
+    title: "",
+    date: "",
+    body: "",
   });
+  const fetchItems = async () => {
+    const data = await fetch("https://api.jsonbin.io/v3/b/60bc11a492164b68bec13b15", {
+      method: "GET",
+      headers: {
+        "X-Master-Key": "$2b$10$TBFDFW8pqBYx5Hjx2VOiBuSJ/mt99xnn.L6OR3X7TJ2S7WcxvXCZO",
+      },
+    });
+
+    const items = await data.json();
+    setItems(items?.record?.root.filter((item) => item.id === match.params.id));
+  };
+  useEffect(() => {
+    fetchItems();
+    window.scroll(0, 0);
+    setSelectedLink(1);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <div className="full-blog-page">
         <div className="full-page-blog-container">
-          <h1>{curBlogData[0].title}</h1>
-          <h2>{curBlogData[0].date}</h2>
+          <h1>{items[0]?.title}</h1>
+          <h2>{items[0]?.date}</h2>
           <div className="full-page-blog-container-image">
-            <img alt="" src={curBlogData[0].image} />
+            <img alt="" src={items[0]?.image} />
           </div>
-          <h3>{curBlogData[0].body}</h3>
+          <h3>{items[0]?.body}</h3>
         </div>
       </div>
       <Legal />

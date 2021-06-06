@@ -9,9 +9,8 @@ const Header = ({ selectedLink }) => {
         className="main-logo"
         aria-labelledby="the puts guy logo"
         alt="the puts guy logo"
-        data="./logos/theputsguyLogo.svg"
+        data="../logos/theputsguyLogo.svg"
       ></object>
-
       <div className="header-bttn-holder">
         <Link to="/" className={`header-bttn ${selectedLink === 0 ? "header-bttn-toggled" : ""}`}>
           <div>About Us</div>
