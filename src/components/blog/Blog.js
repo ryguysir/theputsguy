@@ -21,7 +21,7 @@ const Blog = ({ setSelectedLink }) => {
     fetchItems();
     window.scroll(0, 0);
     setSelectedLink(1);
-  }, []);
+  }, [setSelectedLink]);
   return (
     <>
       <div className="blog-page">

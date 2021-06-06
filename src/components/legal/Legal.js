@@ -20,6 +20,9 @@ const Legal = () => {
           how to invest carefully at its website. Theputsguy.com is intended for information and
           educational purposes only. We do not in any way warrant or guarantee the success of any
           action which you take in reliance on our statements.
+          <br />
+          <br />
+          Copyright © 2021 Theputsguy - All Rights Reserved.
         </h3>
       </span>
     </div>

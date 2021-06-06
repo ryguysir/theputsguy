@@ -10,7 +10,6 @@ const BlogEntry = ({ id, title, date }) => {
           <div className="horizontal-line"></div>
           <h2>{date}</h2>
         </span>
-
         <i className="fas fa-chevron-down"></i>
       </div>
     </Link>

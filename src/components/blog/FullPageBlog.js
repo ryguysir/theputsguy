@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Legal from "../legal/Legal";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
 
 const FullPageBlog = ({ setSelectedLink, match }) => {
   const [items, setItems] = useState({
@@ -25,17 +27,22 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
     window.scroll(0, 0);
     setSelectedLink(1);
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setSelectedLink]);
   return (
     <>
       <div className="full-blog-page">
         <div className="full-page-blog-container">
+          <Link to="/blog" className="full-page-blog-container-return-bttn">
+            <i className="fas fa-chevron-left"></i>&nbsp;&nbsp;Return
+          </Link>
           <h1>{items[0]?.title}</h1>
           <h2>{items[0]?.date}</h2>
           <div className="full-page-blog-container-image">
             <img alt="" src={items[0]?.image} />
           </div>
           <h3>{items[0]?.body}</h3>
+          <FacebookShareButton children={match.url} />
+          <TwitterShareButton children={match.url} />
         </div>
       </div>
       <Legal />

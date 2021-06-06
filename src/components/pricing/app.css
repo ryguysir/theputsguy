@@ -88,9 +88,6 @@
 }
 
 @media screen and (max-width: 700px) {
-  .pricing-block {
-    height: 75vh;
-  }
   .pricing-container {
     width: 90%;
   }
@@ -100,6 +97,7 @@
   .pricing-tier-container h3 {
     font-size: 1em;
   }
+
   .social-container {
     padding-top: 4%;
     padding-bottom: 4%;

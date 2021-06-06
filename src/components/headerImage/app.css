@@ -54,11 +54,18 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
+  .basics-textbox-container {
+    display: flex;
+    flex-flow: column;
+    gap: 2vw;
+    justify-items: center;
+    padding: 4vw;
+  }
   .basics-textbox h1 {
-    font-size: 75%;
+    font-size: 100%;
   }
   .basics-textbox h3 {
-    font-size: 50%;
+    font-size: 85%;
   }
 }
