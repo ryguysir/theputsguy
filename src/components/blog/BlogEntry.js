@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogEntry = ({ id, title, date }) => {
+const BlogEntry = ({ imgSrc, id, title, date }) => {
   return (
     <Link to={`/blog/${id}`}>
       <div className="blog-entry">
@@ -11,6 +11,7 @@ const BlogEntry = ({ id, title, date }) => {
           <h2>{date}</h2>
         </span>
         <i className="fas fa-chevron-down"></i>
+        <img alt="" src={imgSrc} />
       </div>
     </Link>
   );

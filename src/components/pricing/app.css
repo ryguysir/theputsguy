@@ -33,6 +33,7 @@
   padding-bottom: 2%;
 }
 .pricing-tier-container h1 {
+  text-align: center;
   font-weight: 600;
 }
 .pricing-tier-container h3 {

@@ -8,9 +8,8 @@
   align-items: center;
   grid-template-columns: 1fr 5fr 2fr;
   grid-template-rows: 1fr;
-  font-family: "Montserrat", sans-serif;
 
-  z-index: 2;
+  z-index: 10;
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.219));
   -webkit-tap-highlight-color: transparent;
 }
@@ -46,11 +45,9 @@
   text-decoration: none;
   color: black;
 }
-
 .header-bttn:hover {
   border-bottom: 3px grey solid;
 }
-
 .header-bttn-toggled {
   border-bottom: 3px rgb(160, 72, 80) solid;
 }
@@ -65,10 +62,15 @@
 }
 
 @media screen and (max-width: 500px) {
+  .main-logo {
+    height: 4vh;
+    position: relative;
+    margin-left: 5%;
+  }
   .header {
-    grid-template-columns: 1fr 4fr 8fr;
+    grid-template-columns: 1fr 3fr 8fr;
   }
   .header-bttn {
-    font-size: 50%;
+    font-size: 75%;
   }
 }

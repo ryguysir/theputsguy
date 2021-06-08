@@ -29,6 +29,7 @@ const Blog = ({ setSelectedLink }) => {
           {items?.record?.root.map((entry) => {
             return (
               <BlogEntry
+                imgSrc={entry.image}
                 key={entry.id}
                 id={entry.id}
                 title={entry.title}

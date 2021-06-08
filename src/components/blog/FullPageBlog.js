@@ -60,6 +60,7 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
           </h3>
           <div className="full-blog-social-share-container">
             <FacebookShareButton
+              key={Math.random() * 100}
               url="www.google.com"
               quote={"Check out this great blog post from the puts guy!"}
               hashtag="#theputsguy"
@@ -68,6 +69,7 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
             </FacebookShareButton>
             Share this post
             <TwitterShareButton
+              key={Math.random() * 100}
               url="www.google.com"
               quote={"Check out this great blog post from the puts guy!"}
               hashtag="#theputsguy"
@@ -77,7 +79,11 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
           </div>
           <br />
           <br />
-          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          <Disqus.DiscussionEmbed
+            key={items[0]?.title}
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
         </div>
       </div>
       <Legal />
