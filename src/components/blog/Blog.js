@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Fade from "react-reveal/Fade";
 
 import "./app.css";
 import Legal from "../legal/Legal";
@@ -28,14 +29,16 @@ const Blog = ({ setSelectedLink }) => {
         <div className="blog-container">
           {items?.record?.root.map((entry) => {
             return (
-              <BlogEntry
-                imgSrc={entry.image}
-                key={entry.id}
-                id={entry.id}
-                title={entry.title}
-                date={entry.date}
-                body={entry.body}
-              />
+              <Fade top>
+                <BlogEntry
+                  imgSrc={entry.image}
+                  key={entry.id}
+                  id={entry.id}
+                  title={entry.title}
+                  date={entry.date}
+                  body={entry.body}
+                />
+              </Fade>
             );
           })}
         </div>

@@ -103,6 +103,7 @@
   color: rgb(231, 231, 231);
   background: rgb(40, 54, 66);
   padding: 4%;
+  overflow: hidden;
 }
 .full-page-blog-container-image {
   animation: blogEntryLoadAnim 0.5s ease-in-out;

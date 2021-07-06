@@ -3,6 +3,7 @@ import "./app.css";
 
 import PricingTier from "./PricingTier";
 import Social from "./Social";
+import Paypal from "./Paypal";
 
 const Pricing = () => {
   return (
@@ -22,12 +23,7 @@ const Pricing = () => {
             "Theputsguys private spreadsheet, displaying all trades in real-time One 30-minute one-on-one Zoom- redeemable anytime in the first 30-days of membership"
           }
         />
-        <div className="paypal-temp">
-          <img
-            alt="paypal Temp"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/248px-PayPal.svg.png"
-          />
-        </div>
+        <Paypal />
       </div>
       <Social />
     </div>

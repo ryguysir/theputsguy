@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Legal from "../legal/Legal";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
+import Fade from "react-reveal/Fade";
 
 const FullPageBlog = ({ setSelectedLink, match }) => {
   const [items, setItems] = useState({
@@ -40,50 +41,52 @@ const FullPageBlog = ({ setSelectedLink, match }) => {
     <>
       <div className="full-blog-page">
         <div className="full-page-blog-container">
-          <Link to="/blog" className="full-page-blog-container-return-bttn">
-            <i className="fas fa-chevron-left"></i>&nbsp;&nbsp;Return
-          </Link>
-          <h1>{items[0]?.title}</h1>
-          <h2>{items[0]?.date}</h2>
-          <div className="full-page-blog-container-image">
-            <img alt="" src={items[0]?.image} />
-          </div>
-          <h3>
-            {items[0]?.body.split("/n").map((section) => {
-              return (
-                <div>
-                  {section}
-                  <br />
-                </div>
-              );
-            })}
-          </h3>
-          <div className="full-blog-social-share-container">
-            <FacebookShareButton
-              key={Math.random() * 100}
-              url="www.google.com"
-              quote={"Check out this great blog post from the puts guy!"}
-              hashtag="#theputsguy"
-            >
-              <FacebookIcon round={true}></FacebookIcon>
-            </FacebookShareButton>
-            Share this post
-            <TwitterShareButton
-              key={Math.random() * 100}
-              url="www.google.com"
-              quote={"Check out this great blog post from the puts guy!"}
-              hashtag="#theputsguy"
-            >
-              <TwitterIcon round={true}></TwitterIcon>
-            </TwitterShareButton>
-          </div>
-          <br />
-          <br />
-          <Disqus.DiscussionEmbed
-            key={items[0]?.title}
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
+          <Fade cascade left>
+            <Link to="/blog" className="full-page-blog-container-return-bttn">
+              <i className="fas fa-chevron-left"></i>&nbsp;&nbsp;Return
+            </Link>
+            <h1>{items[0]?.title}</h1>
+            <h2>{items[0]?.date}</h2>
+            <div className="full-page-blog-container-image">
+              <img alt="" src={items[0]?.image} />
+            </div>
+            <h3>
+              {items[0]?.body.split("/n").map((section) => {
+                return (
+                  <div>
+                    {section}
+                    <br />
+                  </div>
+                );
+              })}
+            </h3>
+            <div className="full-blog-social-share-container">
+              <FacebookShareButton
+                key={Math.random() * 100}
+                url="www.google.com"
+                quote={"Check out this great blog post from the puts guy!"}
+                hashtag="#theputsguy"
+              >
+                <FacebookIcon round={true}></FacebookIcon>
+              </FacebookShareButton>
+              Share this post
+              <TwitterShareButton
+                key={Math.random() * 100}
+                url="www.google.com"
+                quote={"Check out this great blog post from the puts guy!"}
+                hashtag="#theputsguy"
+              >
+                <TwitterIcon round={true}></TwitterIcon>
+              </TwitterShareButton>
+            </div>
+            <br />
+            <br />
+            <Disqus.DiscussionEmbed
+              key={items[0]?.title}
+              shortname={disqusShortname}
+              config={disqusConfig}
+            />
+          </Fade>
         </div>
       </div>
       <Legal />
