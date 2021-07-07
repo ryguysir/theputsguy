@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Fade from "react-reveal/Fade";
-
 import "./app.css";
 import Legal from "../legal/Legal";
-import BlogEntry from "./BlogEntry";
+const BlogEntry = lazy(() => import("./BlogEntry"));
 
 const Blog = ({ setSelectedLink }) => {
   const [items, setItems] = useState({ record: { root: [] } });
@@ -27,20 +26,22 @@ const Blog = ({ setSelectedLink }) => {
     <>
       <div className="blog-page">
         <div className="blog-container">
-          {items?.record?.root.map((entry) => {
-            return (
-              <Fade top>
-                <BlogEntry
-                  imgSrc={entry.image}
-                  key={entry.id}
-                  id={entry.id}
-                  title={entry.title}
-                  date={entry.date}
-                  body={entry.body}
-                />
-              </Fade>
-            );
-          })}
+          <Suspense fallback={<div>loading...</div>}>
+            {items?.record?.root.map((entry) => {
+              return (
+                <Fade>
+                  <BlogEntry
+                    imgSrc={entry.image}
+                    key={entry.id}
+                    id={entry.id}
+                    title={entry.title}
+                    date={entry.date}
+                    body={entry.body}
+                  />
+                </Fade>
+              );
+            })}
+          </Suspense>
         </div>
       </div>
 
